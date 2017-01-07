@@ -86,15 +86,25 @@ def TestJoin():
 
 def TestNormPath():
   assert path.normpath('abc/') == 'abc'
+  assert isinstance(path.normpath('abc/'), str)
   assert path.normpath('/a//b') == '/a/b'
+  assert isinstance(path.normpath('/a//b'), str)
   assert path.normpath('abc/../123') == '123'
+  assert isinstance(path.normpath('abc/../123'), str)
   assert path.normpath('../abc/123') == '../abc/123'
+  assert isinstance(path.normpath('../abc/123'), str)
   assert path.normpath('x/y/./z') == 'x/y/z'
+  assert isinstance(path.normpath('x/y/./z'), str)
   assert path.normpath(u'abc/') == u'abc'
+  assert isinstance(path.normpath(u'abc/'), unicode)
   assert path.normpath(u'/a//b') == u'/a/b'
+  assert isinstance(path.normpath(u'/a//b'), unicode)
   assert path.normpath(u'abc/../123') == u'123'
+  assert isinstance(path.normpath(u'abc/../123'), unicode)
   assert path.normpath(u'../abc/123') == u'../abc/123'
+  assert isinstance(path.normpath(u'../abc/123'), unicode)
   assert path.normpath(u'x/y/./z') == u'x/y/z'
+  assert isinstance(path.normpath(u'x/y/./z'), unicode)
 
 
 if __name__ == '__main__':
